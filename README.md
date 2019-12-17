@@ -11,13 +11,13 @@ easy to plug in any expressjs app.
 This is a minimal example of an express app using this package:
 
 ``` javascript
-import { buildRouter } from '@moneybutton/express-paymail'
+const expressPaymail = require('@moneybutton/express-paymail')
 import express from 'express'
 
 const BASE_URL = 'example.tls' // The library needs to know
                                // the actual url where the app is going to work
 
-const paymailRouter = buildRouter(BASE_URL, {
+const paymailRouter = expressPaymail.buildRouter(BASE_URL, {
   basePath: '/api/bsvalias',
   getIdentityKey: async (name, domain) => {
     // A paymail has the form `name@domain`. You can find the appropiate
